@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/kaings/classroom-webpack-1#readme",
   "devDependencies": {
+    "css-loader": "^2.0.1",
+    "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   }
