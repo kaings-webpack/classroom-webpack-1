@@ -14,7 +14,8 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'postcss-loader'
                 ]
             },
             {
@@ -22,6 +23,7 @@ module.exports = {
                 use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader'},
+                    {loader: 'postcss-loader'},
                     {loader: 'sass-loader'}
                 ]
             },
@@ -29,11 +31,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                    
+                    loader: 'babel-loader'
                 }
             }
         ]
