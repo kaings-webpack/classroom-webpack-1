@@ -1,19 +1,21 @@
 const path = require('path');
+//const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+/* from webpack 4, use MiniCssExtractPlugin instead of MiniCssExtractPlugin */
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/js/index.js',
-
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-
     module: {
         rules: [
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    {loader: MiniCssExtractPlugin.loader},
                     'css-loader',
                     'postcss-loader'
                 ]
@@ -21,10 +23,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    {loader: 'style-loader'},
-                    {loader: 'css-loader'},
-                    {loader: 'postcss-loader'},
-                    {loader: 'sass-loader'}
+                    {loader: MiniCssExtractPlugin.loader},
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -35,5 +37,11 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        //new ExtractTextPlugin("style.css")
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
+        })
+    ]
  }
