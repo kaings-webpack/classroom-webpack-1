@@ -6,3 +6,7 @@
 .rucksack-test {
     font-size: responsive;
 }
+
+::placeholder {
+    color: grey;
+}

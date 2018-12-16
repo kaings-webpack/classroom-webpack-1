@@ -1,40 +1,44 @@
 {
-  "name": "classroom-webpack-1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kaings/classroom-webpack-1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kaings/classroom-webpack-1/issues"
-  },
-  "homepage": "https://github.com/kaings/classroom-webpack-1#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.0",
-    "autoprefixer": "^9.4.2",
-    "babel-loader": "^8.0.4",
-    "css-loader": "^2.0.1",
-    "cssnano": "^4.1.7",
-    "lost": "^8.3.0",
-    "node-sass": "^4.11.0",
-    "postcss-loader": "^3.0.0",
-    "rucksack-css": "^1.0.2",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.0.0"
-  }
+    "name": "classroom-webpack-1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kaings/classroom-webpack-1.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kaings/classroom-webpack-1/issues"
+    },
+    "homepage": "https://github.com/kaings/classroom-webpack-1#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.2.0",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.0",
+        "autoprefixer": "^9.4.2",
+        "babel-loader": "^8.0.4",
+        "css-loader": "^2.0.1",
+        "cssnano": "^4.1.7",
+        "lost": "^8.3.0",
+        "node-sass": "^4.11.0",
+        "postcss-loader": "^3.0.0",
+        "rucksack-css": "^1.0.2",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.27.1",
+        "webpack-cli": "^3.1.2"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.0.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
 }
