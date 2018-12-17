@@ -5,6 +5,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -25,7 +26,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    {loader: MiniCssExtractPlugin.loader},
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     'css-loader',
                     'postcss-loader'
                 ]
@@ -33,7 +36,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    {loader: MiniCssExtractPlugin.loader},
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     'css-loader',
                     'postcss-loader',
                     'sass-loader'
@@ -56,6 +61,24 @@ module.exports = {
         //new ExtractTextPlugin("style.css")
         new MiniCssExtractPlugin({
             filename: 'style.css'
-        })
+        }),
+        new BrowserSyncPlugin(
+            // BrowserSync options
+            {
+                // browse to http://localhost:3000/ during development
+                host: 'localhost',
+                port: 3000,
+                // proxy the Webpack Dev Server endpoint
+                // (which should be serving on http://localhost:3100/) -- correction: port 8080
+                // through BrowserSync
+                proxy: 'http://localhost:8080/'
+            },
+            // plugin options
+            {
+                // prevent BrowserSync from reloading the page
+                // and let Webpack Dev Server take care of this
+                reload: false
+            }
+    )
     ]
- }
+}
