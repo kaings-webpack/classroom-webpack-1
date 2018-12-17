@@ -55,12 +55,19 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new HTMLWebpackPlugin({
-            title: 'Output Management'
-        }),
         //new ExtractTextPlugin("style.css")
         new MiniCssExtractPlugin({
             filename: 'style.css'
+        }),
+        new HTMLWebpackPlugin({
+            filename: 'home.html',
+            template: './src/html/home.html',
+            chunks: ['fileindexjs']
+        }),
+        new HTMLWebpackPlugin({
+            filename: 'about.html',
+            template: './src/html/about.html',
+            chunks: ['filemodulejs']
         }),
         new BrowserSyncPlugin(
             // BrowserSync options
