@@ -3,6 +3,7 @@ const path = require('path');
 
 /* from webpack 4, use MiniCssExtractPlugin instead of MiniCssExtractPlugin */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -44,6 +45,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         //new ExtractTextPlugin("style.css")
         new MiniCssExtractPlugin({
             filename: 'style.css'
